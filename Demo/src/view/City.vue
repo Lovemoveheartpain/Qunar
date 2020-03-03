@@ -120,7 +120,11 @@ export default {
 <style scoped>
 .van-nav-bar {
   background-color: rgb(0, 188, 212);
+<<<<<<< HEAD
   height: 2.375rem;
+=======
+  height: 38px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
   color: white;
   display: flex;
   align-items: center;
@@ -133,10 +137,17 @@ export default {
 }
 .realm > div {
   width: 35%;
+<<<<<<< HEAD
   height: 1.25rem;
   border: 0.0625rem solid white;
   line-height: 1.25rem;
   font-size: 0.875rem;
+=======
+  height: 20px;
+  border: 1px solid white;
+  line-height: 20px;
+  font-size: 14px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 }
 .addColor {
   color: rgb(0, 188, 212);
@@ -146,9 +157,15 @@ export default {
   background: #f5f5f5;
 }
 h4 {
+<<<<<<< HEAD
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   padding-left: 0.625rem;
+=======
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 }
 .rep {
   width: 100%;
@@ -157,11 +174,16 @@ h4 {
   text-align: center;
 }
 .rep > div {
+<<<<<<< HEAD
   line-height: 1.875rem;
+=======
+  line-height: 30px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
   background-color: white;
 }
 .hotCityDiv > div {
   width: 32.5%;
+<<<<<<< HEAD
   border: 0.0625rem solid lightgray;
 }
 .letterDiv > div {
@@ -181,6 +203,27 @@ h4 {
   right: 0rem;
   top: 50%;
   margin-top: -9.375rem;
+=======
+  border: 1px solid lightgray;
+}
+.letterDiv > div {
+  width: 16%;
+  border: 1px solid lightgray;
+}
+.particular .gridDiv {
+  width: 24%;
+  border: 1px solid lightgray;
+}
+.letterSideBar
+{
+  width: 20px;
+  height: 300px;
+  background-color: pink;
+  position: fixed;
+  right: 0px;
+  top: 50%;
+  margin-top: -150px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 }
 .letterSideBar>div
 {

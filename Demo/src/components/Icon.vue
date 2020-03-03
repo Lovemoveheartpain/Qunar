@@ -43,19 +43,34 @@ export default {
 <style scoped>
 .my-swipe 
 {
+<<<<<<< HEAD
   padding-top: 0.625rem;
     height: 11.25rem;
     background-color: white;
     /* border: 0.0625rem solid red; */
+=======
+  padding-top: 10px;
+    height: 180px;
+    background-color: white;
+    /* border: 1px solid red; */
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 }
 .my-swipe .van-swipe-item {
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
   font-size: 0.875rem;
 }
 .iconDiv {
   width: 25%;
   height: 4.375rem;
+=======
+  font-size: 14px;
+}
+.iconDiv {
+  width: 25%;
+  height: 70px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

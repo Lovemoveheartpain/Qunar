@@ -39,7 +39,11 @@ export default {
   align-items: center;
 }
 .van-search {
+<<<<<<< HEAD
   padding: 0rem;
+=======
+  padding: 0px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 }
 .van-icon {
   color: gray;

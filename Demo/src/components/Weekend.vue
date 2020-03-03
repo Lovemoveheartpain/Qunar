@@ -33,10 +33,17 @@ export default {
         let long = $(this).height();
         if (top1 - scroll >= top2 && bottom1 - scroll <= bottom2) {
           a[0].style.color = "red";
+<<<<<<< HEAD
           a[0].style.fontSize = "1rem";
         } else {
           a[0].style.color = "black";
           a[0].style.fontSize = "0.75rem";
+=======
+          a[0].style.fontSize = "16px";
+        } else {
+          a[0].style.color = "black";
+          a[0].style.fontSize = "12px";
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
         }
       });
     });
@@ -50,12 +57,17 @@ export default {
 }
 .weekendItem {
   width: 100%;
+<<<<<<< HEAD
   margin-bottom: 0.625rem;
+=======
+  margin-bottom: 10px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 }
 .weekendItem > img {
   width: 100%;
 }
 .weekendItem > p {
+<<<<<<< HEAD
   margin: 0.625rem 0rem;
   padding-left: 0.625rem;
 }
@@ -66,5 +78,17 @@ h3 {
 .weekendItem > h3 {
   padding-left: 0.625rem;
   margin: 0.625rem 0rem 0rem;
+=======
+  margin: 10px 0px;
+  padding-left: 10px;
+}
+h3 {
+  margin: 15px 0px;
+  padding-left: 10px;
+}
+.weekendItem > h3 {
+  padding-left: 10px;
+  margin: 10px 0px 0px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 }
 </style>

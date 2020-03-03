@@ -10,7 +10,11 @@ export default {};
 .bottomDiv
 {
     width: 100%;
+<<<<<<< HEAD
     padding-top: 0.625rem;
+=======
+    padding-top: 10px;
+>>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 }
 img
 {
