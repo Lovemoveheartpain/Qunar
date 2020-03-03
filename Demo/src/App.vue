@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
     <router-view />
-=======
-      <router-view />
->>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
   </div>
 </template>
 
@@ -14,11 +10,7 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
-<style scoped>
-=======
 <style>
->>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
 * {
   padding: 0px;
   margin: 0px;
