@@ -22,10 +22,10 @@ export default {
 .swiperDiv
 {
   width: 100%;
-  height: 150px;
+  height: 9.375rem;
 }
 .my-swipe .van-swipe-item img {
   width: 100%;
-  height: 150px;
+  height: 9.375rem;
 }
 </style>

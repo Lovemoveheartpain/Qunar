@@ -36,23 +36,23 @@ export default {
 <style scoped>
 .wai {
   background-color: white;
-  margin-top: 10px;
-  padding-top: 5px;
+  margin-top: 0.625rem;
+  padding-top: 0.3125rem;
 }
 .betterDiv {
   width: 100%;
-  height: 120px;
+  height: 7.5rem;
   /* background-color: pink; */
   overflow: hidden;
 }
 .hotDiv {
-  height: 120px;
+  height: 7.5rem;
   display: inline-flex;
 }
 .hotItem {
-  width: 100px;
-  height: 100px;
-  /* border: 1px solid red; */
+  width: 6.25rem;
+  height: 6.25rem;
+  /* border: 0.0625rem solid red; */
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
@@ -64,13 +64,13 @@ export default {
 .hotItem > p {
   width: 70%;
   text-align: center;
-  font-size: 12px;
+  font-size: 0.75rem;
   overflow: hidden; /*自动隐藏文字*/
   text-overflow: ellipsis; /*文字隐藏后添加省略号*/
   white-space: nowrap; /*强制不换行*/
 }
 h3 {
-  margin: 15px 0px;
-  padding-left: 10px;
+  margin: 0.9375rem 0rem;
+  padding-left: 0.625rem;
 }
 </style>

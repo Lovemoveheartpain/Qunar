@@ -10,7 +10,7 @@ export default {};
 .bottomDiv
 {
     width: 100%;
-    padding-top: 10px;
+    padding-top: 0.625rem;
 }
 img
 {

@@ -33,10 +33,10 @@ export default {
         let long = $(this).height();
         if (top1 - scroll >= top2 && bottom1 - scroll <= bottom2) {
           a[0].style.color = "red";
-          a[0].style.fontSize = "16px";
+          a[0].style.fontSize = "1rem";
         } else {
           a[0].style.color = "black";
-          a[0].style.fontSize = "12px";
+          a[0].style.fontSize = "0.75rem";
         }
       });
     });
@@ -50,21 +50,21 @@ export default {
 }
 .weekendItem {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 .weekendItem > img {
   width: 100%;
 }
 .weekendItem > p {
-  margin: 10px 0px;
-  padding-left: 10px;
+  margin: 0.625rem 0rem;
+  padding-left: 0.625rem;
 }
 h3 {
-  margin: 15px 0px;
-  padding-left: 10px;
+  margin: 0.9375rem 0rem;
+  padding-left: 0.625rem;
 }
 .weekendItem > h3 {
-  padding-left: 10px;
-  margin: 10px 0px 0px;
+  padding-left: 0.625rem;
+  margin: 0.625rem 0rem 0rem;
 }
 </style>

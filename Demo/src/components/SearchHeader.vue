@@ -39,7 +39,7 @@ export default {
   align-items: center;
 }
 .van-search {
-  padding: 0px;
+  padding: 0rem;
 }
 .van-icon {
   color: gray;
