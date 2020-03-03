@@ -39,6 +39,9 @@
         </div>
       </div>
     </div>
+    <div class="letterSideBar">
+      <div v-for="(item, index) in cityList" :key="index">{{item.key}}</div>
+    </div>
   </div>
 </template>
 
@@ -168,5 +171,19 @@ h4 {
 .particular .gridDiv {
   width: 24%;
   border: 1px solid lightgray;
+}
+.letterSideBar
+{
+  width: 20px;
+  height: 300px;
+  background-color: pink;
+  position: fixed;
+  right: 0px;
+  top: 50%;
+  margin-top: -150px;
+}
+.letterSideBar>div
+{
+
 }
 </style>

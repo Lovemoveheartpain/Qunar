@@ -9,6 +9,10 @@ import 'vant/lib/index.css';
 import './assets/styles/iconfont/iconfont.css'
 import './assets/styles/border.css'
 import './assets/styles/reset.css'
+import VueResource from 'vue-resource'
+
+/*使用VueResource插件*/
+Vue.use(VueResource)
 Vue.use(Vant);
 Vue.config.productionTip = false
 

@@ -8,8 +8,6 @@
       shape="round"
       slot="title"
       @input="change"
-      @focus="flag(true)"
-      @blur="flag(false)"
     />
   </van-nav-bar>
 </template>
@@ -30,9 +28,6 @@ export default {
     },
     searchThing() {
       this.$store.commit("setHistory", this.value);
-    },
-    flag(flag) {
-      this.$emit("isFlag", flag);
     }
   }
 };

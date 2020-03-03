@@ -28,7 +28,7 @@ export default {
     return {
       list: [],
       index: 0,
-      sum: 11
+      sum: 5
     };
   },
   computed: {
