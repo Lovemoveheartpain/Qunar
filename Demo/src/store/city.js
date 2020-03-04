@@ -1,14 +1,15 @@
 export default {
     state: {
         cityList: [],
-        selectCity:'安阳'
+        selectCity: window.localStorage.getItem('city') || '安阳'
     },
     mutations: {
         addCityList(state, data) {
             state.cityList = data;
         },
-        changeCity(state,name){
-            state.selectCity = name
+        changeCity(state, name) {
+            state.selectCity = name;
+            window.localStorage.setItem('city', name)
         }
     },
     actions: {
