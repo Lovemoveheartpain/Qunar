@@ -27,7 +27,7 @@
       </div>
       <div class="particular">
         <div v-for="(item, index) in cityList" :key="index">
-          <h4 class="h4" :id="'A'+index">{{item.key}}</h4>
+          <h4 class="h4" ref="h4" :id="'A'+index">{{item.key}}</h4>
           <div class="rep">
             <div
               class="gridDiv"
@@ -39,9 +39,15 @@
         </div>
       </div>
     </div>
-    <div class="letterSideBar">
-      <div v-for="(item, index) in cityList" :key="index">{{item.key}}</div>
+    <div class="letterSideBar" :class="{show:isShow}">
+      <div
+        v-for="(item, index) in cityList"
+        ref="letter"
+        @click="click(index)"
+        :key="index"
+      >{{item.key}}</div>
     </div>
+    <button class="btn" @click="top" :class="{show2:isShow2}">回到顶部</button>
   </div>
 </template>
 
@@ -60,7 +66,9 @@ export default {
           text: "境外·港澳台",
           flag: false
         }
-      ]
+      ],
+      isShow: false,
+      isShow2: false
     };
   },
   computed: {
@@ -81,6 +89,9 @@ export default {
     }
   },
   methods: {
+    top() {
+      $("html,body").animate({ scrollTop: 0 }, 500);
+    },
     onClickLeft() {
       this.$router.push("/");
     },
@@ -93,6 +104,50 @@ export default {
     changeCity(name) {
       this.$store.commit("changeCity", name);
       this.$router.push("/");
+    },
+    location(ele) {
+      $(ele).click(function() {
+        let text = $(this).text();
+        $(".h4").each(function() {
+          if (text === $(this).text()) {
+            $("html,body").animate({ scrollTop: $(this).offset().top }, 500);
+          }
+        });
+      });
+    },
+    click(index) {
+      this.$refs.letter.forEach(element => {
+        element.style.color = "";
+      });
+      this.$refs.letter[index].style.color = "aqua";
+    },
+    scroll() {
+      let i = this;
+      $(document).scroll(function() {
+        let scroll = $(this).scrollTop();
+        if (scroll > $(".particular")[0].offsetTop - 1) {
+          i.isShow = true;
+          i.isShow2 = true;
+        } else {
+          i.isShow = false;
+          i.isShow2 = false;
+        }
+        let num = 0;
+        let arr = i.$refs.h4;
+        let array = [];
+        arr.forEach((element, index) => {
+          if (scroll - element.offsetTop >= 0) {
+            array.push(index);
+          }
+        });
+        i.$refs.letter.forEach(element => {
+          element.style.color = "";
+        });
+        let bin = i.$refs.letter[array[array.length - 1]];
+        if (bin) {
+          bin.style.color = "aqua";
+        }
+      });
     }
   },
   mounted() {
@@ -103,16 +158,11 @@ export default {
       .catch(err => {
         console.log(err);
       });
+    this.scroll();
   },
   updated() {
-    $(".letterDiv div").click(function() {
-      let text = $(this).text();
-      $(".h4").each(function() {
-        if (text === $(this).text()) {
-          $("html,body").animate({ scrollTop: $(this).offset().top }, 500);
-        }
-      });
-    });
+    this.location(".letterDiv div");
+    this.location(".letterSideBar div");
   }
 };
 </script>
@@ -172,14 +222,40 @@ h4 {
   width: 24%;
   border: 0.0625rem solid lightgray;
 }
-.letterSideBar
-{
+.letterSideBar {
   width: 1.25rem;
-  height: 18.75rem;
-  background-color: pink;
+  height: 31.25rem;
+  background-color: rgba(200, 200, 200, 0.4);
   position: fixed;
   right: 0rem;
   top: 50%;
-  margin-top: -9.375rem;
+  margin-top: -15.625rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  opacity: 0;
+}
+.letterSideBar > div {
+  width: 100%;
+  height: 1.125rem;
+  /* background-color: red; */
+  text-align: center;
+  line-height: 1.125rem;
+}
+.show {
+  opacity: 1;
+  transition: all 1.5s;
+}
+.btn {
+  position: fixed;
+  right: 0rem;
+  bottom: 1.875rem;
+  width: 1.875rem;
+  height: 1.25rem;
+  opacity: 0;
+}
+.show2 {
+  opacity: 1;
+  transition: all 1.5s;
 }
 </style>

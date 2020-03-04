@@ -1,5 +1,5 @@
 <template>
-  <div class="bottomDiv" ><img src="../assets/bottom.png" alt=""></div>
+  <div class="bottomDiv" ><img src="../../assets/bottom.png" alt=""></div>
 </template>
 
 <script>

@@ -40,17 +40,10 @@ export default {
 }
 .searchingLi {
   width: 94%;
-<<<<<<< HEAD
   line-height: 1.875rem;
   padding-left: 3%;
   padding-right: 3%;
   border-bottom: 0.0625rem solid gray;
-=======
-  line-height: 30px;
-  padding-left: 3%;
-  padding-right: 3%;
-  border-bottom: 1px solid gray;
->>>>>>> 8104ffbdaa6daa3c2238ca1c85038be7c84f77ef
   background-color: #f0f0f0;
   display: inline-flex;
 }

@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import SearchHeader from "../components/SearchHeader";
-import SearchingVue from "../components/Searching.vue";
-import SearchHistoryVue from "../components/SearchHistory.vue";
+import SearchHeader from "../components/search/SearchHeader.vue";
+import SearchingVue from "../components/search/Searching.vue";
+import SearchHistoryVue from "../components/search/SearchHistory.vue";
 export default {
   components: {
     SearchHeader,
