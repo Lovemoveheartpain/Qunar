@@ -6,7 +6,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    init: []
+    init: [],
+    a:{
+      name:'李智杰',
+      age:'18'
+    }
   },
   mutations: {
     addInitList(state,data){

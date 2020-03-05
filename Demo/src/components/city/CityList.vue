@@ -48,26 +48,26 @@ export default {
       let arr = [];
       let resLength = this.finail.length; //数据总长度
       console.log(resLength);
-        let remainder = (resLength - this.num) % this.page; //余数
-        if (resLength >= this.num + this.page) {
-          for (let index = this.num; index < this.num + this.page; index++) {
-            let element = this.finail[index];
-            arr.push(element);
-          }
-          this.num += this.page;
-        } else if (remainder !== 0 && resLength - this.num == remainder) {
-          window.console.log("有余数");
-          for (let index = this.num; index < this.num + remainder; index++) {
-            let element = this.finail[index];
-            arr.push(element);
-          }
-          this.num += this.page;
-        } else {
-          console.log(12);
-          this.scrollText = "已经到底了";
-          return;
+      let remainder = (resLength - this.num) % this.page; //余数
+      if (resLength >= this.num + this.page) {
+        for (let index = this.num; index < this.num + this.page; index++) {
+          let element = this.finail[index];
+          arr.push(element);
         }
-        console.log(arr);
+        this.num += this.page;
+      } else if (remainder !== 0 && resLength - this.num == remainder) {
+        window.console.log("有余数");
+        for (let index = this.num; index < this.num + remainder; index++) {
+          let element = this.finail[index];
+          arr.push(element);
+        }
+        this.num += this.page;
+      } else {
+        console.log(12);
+        this.scrollText = "已经到底了";
+        return;
+      }
+      console.log(arr);
       return arr;
     }
   },
