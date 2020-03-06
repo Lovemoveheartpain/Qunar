@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     inform() {
-      Axios.get("/a/index.json/?" + this.city)
+      Axios.get("/a/index.json/?city=" + this.city)
         .then(res => {
           // console.log(res.data.data);
           this.$store.dispatch("initList", res.data.data);
