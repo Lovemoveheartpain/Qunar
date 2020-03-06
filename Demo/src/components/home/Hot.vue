@@ -6,11 +6,17 @@
     </h3>
     <div class="betterDiv">
       <div class="hotDiv">
-        <div class="hotItem" v-for="(item, index) in hotList" :key="index">
+        <router-link
+          :to="{path:`/details/00${index}`}"
+          tag="div"
+          class="hotItem"
+          v-for="(item, index) in hotList"
+          :key="index"
+        >
           <img :src="item.imgUrl" alt />
           <p>{{item.title}}</p>
           <p>{{item.desc}}</p>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -27,7 +33,8 @@ export default {
   mounted() {
     new Better(".betterDiv", {
       scrollX: true,
-      scrollY: false
+      scrollY: false,
+      click: true
     });
   }
 };

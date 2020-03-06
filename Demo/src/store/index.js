@@ -2,18 +2,15 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import city from './city';
 import history from './history';
+import details from './details';
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     init: [],
-    a:{
-      name:'李智杰',
-      age:'18'
-    }
   },
   mutations: {
-    addInitList(state,data){
+    addInitList(state, data) {
       state.init = data;
     }
   },
@@ -24,6 +21,7 @@ export default new Vuex.Store({
   },
   modules: {
     city,
-    history
+    history,
+    details
   }
 })

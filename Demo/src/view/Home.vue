@@ -52,12 +52,8 @@ export default {
   mounted() {
     this.lastCity = this.city;
     this.inform();
-    console.log("mounted");
   },
   activated() {
-    console.log("activated");
-    console.log(this.lastCity);
-    console.log(this.city);
     if (this.lastCity !== this.city) {
       this.lastCity = this.city;
       this.inform();

@@ -20,6 +20,16 @@ export default new Router({
       name: 'search',
       component: () => import('../view/Search.vue')
     },
+    {
+      path: '/details/:id',
+      name: 'details',
+      component: () => import('../view/Details.vue')
+    },
+    {
+      path: '/getSightImgs/:site',
+      name: 'getSightImgs',
+      component: () => import('../view/SightImgs.vue')
+    },
   ],
   mode: 'history',
   scrollBehavior(to, from, savedPosition) {
