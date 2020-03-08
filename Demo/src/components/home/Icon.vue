@@ -1,18 +1,32 @@
 <template>
-  <div>
-    <van-swipe class="my-swipe"  indicator-color="skyBlue">
-      <van-swipe-item v-for="(item, index) in final" :key="index">
-        <div class="iconDiv" v-for="(item, index) in item" :key="index">
+  <div class="my-swiper">
+    <swiper v-if="icon" :options="swiperOption" ref="mySwiper">
+      <swiper-slide v-for="(list, index) in final" :key="index">
+        <div class="iconDiv" v-for="(item, num) in list" :key="num">
           <img :src="item.imgUrl" alt />
           <p>{{item.desc}}</p>
         </div>
-      </van-swipe-item>
-    </van-swipe>
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination">s</div>
+    </swiper>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      swiperOption: {
+        loop: true,
+        slidesPerView: "auto",
+        pagination: {
+          el: ".swiper-pagination"
+        }
+        // observer: true,
+        // observeSlideChildren: true
+      }
+    };
+  },
   computed: {
     icon() {
       return this.$store.state.init.iconList;
@@ -32,7 +46,7 @@ export default {
           }
           iconList.push(arr);
         }
-        // console.log(iconList);
+        console.log(iconList);
         return iconList;
       }
     }
@@ -41,17 +55,17 @@ export default {
 </script>
 
 <style scoped>
-.my-swipe 
-{
+.my-swiper {
   padding-top: 0.625rem;
-    height: 11.25rem;
-    background-color: white;
-    /* border: 0.0625rem solid red; */
+  width: 100%;
+  height: 11.25rem;
+  background-color: white;
 }
-.my-swipe .van-swipe-item {
-  display: flex;
+.swiper-slide {
+  width: 100%;
+  height: 11.25rem;
+  display: inline-flex;
   flex-wrap: wrap;
-  font-size: 0.875rem;
 }
 .iconDiv {
   width: 25%;

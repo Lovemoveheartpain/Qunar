@@ -11,7 +11,16 @@
         <img :src="item" alt />
       </div>
     </div>
-    <div v-show="isShow" class="modalDiv">模态框</div>
+    <div v-if="isShow" @click="isShow = !isShow" class="modalDiv">
+      <div class="modalDivCenter">
+        <swiper :options="swiperOption">
+          <swiper-slide v-for="(item, index) in gallaryImgs" :key="index">
+            <img :src="item" alt />
+          </swiper-slide>
+          <div class="swiper-pagination" style="color:white;font-size:20px" slot="pagination"></div>
+        </swiper>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,7 +31,16 @@ import AXios from "axios";
 export default {
   data() {
     return {
-      isShow: false
+      isShow: false,
+      swiperOption: {
+        initialSlide: 0,
+        observer: true,
+        observeSlideChildren: true,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction"
+        }
+      }
     };
   },
   computed: {
@@ -32,6 +50,11 @@ export default {
     gallaryImgs() {
       if (this.detailsList.length != 0) {
         return this.detailsList.gallaryImgs;
+      }
+    },
+    length() {
+      if (this.detailsList.length != 0) {
+        return this.detailsList.gallaryImgs.length;
       }
     }
   },
@@ -51,6 +74,7 @@ export default {
     },
     modal(index) {
       this.isShow = true;
+      this.swiperOption.initialSlide = index;
     }
   },
   mounted() {
@@ -115,7 +139,21 @@ export default {
   .modalDiv {
     width: 100%;
     height: 41.6875rem;
-    background: gray;
+    background: black;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+
+    .modalDivCenter {
+      width: 100%;
+      height: 15.625rem;
+
+      img {
+        width: 100%;
+        height: 15.625rem;
+      }
+    }
   }
 }
 </style>

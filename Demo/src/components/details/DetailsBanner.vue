@@ -57,8 +57,8 @@ export default {
   background: $bgColor;
   color: #fff;
   position: fixed;
-  top: 0px;
-  display: none;
+  top: 200px;
+  // display: none;
 
   .details-header-left {
     width: 2rem;

@@ -1,30 +1,44 @@
 <template>
-  <div class="swiperDiv" >
-    <van-swipe class="my-swipe" :autoplay="5000" indicator-color="skyBlue">
-      <van-swipe-item v-for="(item, index) in swiper" :key="index">
+  <div class="swiperDiv">
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="(item, index) in swiperList" :key="index">
         <img :src="item.imgUrl" alt />
-      </van-swipe-item>
-    </van-swipe>
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      swiperOption: {
+        autoplay: {
+          disableOnInteraction: false,
+          delay: 2000,
+          loop: true
+        },
+        pagination: {
+          el: ".swiper-pagination"
+        }
+      }
+    };
+  },
   computed: {
-    swiper() {
+    swiperList() {
       return this.$store.state.init.swiperList;
     }
-  },
+  }
 };
 </script>
 
 <style scoped>
-.swiperDiv
-{
+.swiperDiv {
   width: 100%;
   height: 9.375rem;
 }
-.my-swipe .van-swipe-item img {
+img {
   width: 100%;
   height: 9.375rem;
 }

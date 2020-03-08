@@ -1,8 +1,10 @@
 <template>
   <div>
-    <van-nav-bar left-arrow @click-left="onClickLeft">
-      <span slot="title" style="color:white;">城市选择</span>
-    </van-nav-bar>
+    <div class="van-nav-bar just">
+      <div class="iconfont fan" @click="onClickLeft">&#xe618;</div>
+      <div class="middle">城市选择</div>
+      <div class="fan"></div>
+    </div>
     <div class="realm van-nav-bar">
       <div
         v-for="(item,index) in realm"
@@ -44,29 +46,32 @@ export default {
 };
 </script>
 
-<style scoped>
-.van-nav-bar {
-  background-color: rgb(0, 188, 212);
-  height: 2.375rem;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-.van-icon {
-  color: white;
-}
-.realm {
-  justify-content: center;
-}
-.realm > div {
-  width: 35%;
-  height: 1.25rem;
-  border: 0.0625rem solid white;
-  line-height: 1.25rem;
-  font-size: 0.875rem;
-}
-.addColor {
-  color: rgb(0, 188, 212);
-  background-color: white;
-}
+<style lang="stylus" scoped>
+.van-nav-bar
+  background-color rgb(0, 188, 212)
+  height 2.375rem
+  color white
+  display flex
+  align-items center
+.just
+  justify-content space-around
+.fan
+  width 20%
+  font-size 1.25rem
+.middle
+  width 50%
+  text-align center
+  font-size 1.125rem
+.realm
+  justify-content center
+.realm > div
+  width 35%
+  height 1.25rem
+  border 0.0625rem solid white
+  line-height 1.25rem
+  font-size 0.875rem
+  text-align center
+.addColor
+  color rgb(0, 188, 212)
+  background-color white
 </style>
