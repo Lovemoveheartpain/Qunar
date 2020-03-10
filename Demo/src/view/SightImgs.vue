@@ -64,7 +64,7 @@ export default {
       this.$router.go(-1);
     },
     initDetails() {
-      AXios.get("/a/detail.json")
+      AXios.get("/a/detail.json?id=" + this.$route.params.site)
         .then(res => {
           this.initDetailsList(res.data.data);
         })
@@ -78,82 +78,62 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$route.params.site)
     this.initDetails();
   }
 };
 </script>
 
 <style lang="stylus" scoped>
-.detailsGallary {
-  width: 100%;
-
-  .gallary_header {
-    width: 100%;
-    height: 2.6875rem;
-    background-color: white;
-    position: fixed;
-
-    .gallary_header_left {
-      width: 10%;
-      height: 2.6875rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      z-index: 99;
-
-      .icon_class {
-        font-size: 1.5rem;
-      }
-    }
-
-    .gallary_header_middle {
-      width: 100%;
-      line-height: 2.6875rem;
-      text-align: center;
-      font-size: 1rem;
-      position: absolute;
-      top: 0rem;
-    }
-  }
-
-  .gallary_container {
-    width: 98%;
-    padding: 3.125rem 1%;
-    display: inline-flex;
-    background-color: #f5f5f5;
-    flex-wrap: wrap;
-
-    div {
-      width: 48%;
-      height: 120px;
-      margin: 0.1875rem;
-
-      img {
-        width: 100%;
-        height: 120px;
-      }
-    }
-  }
-
-  .modalDiv {
-    width: 100%;
-    height: 41.6875rem;
-    background: black;
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    flex-wrap: wrap;
-
-    .modalDivCenter {
-      width: 100%;
-      height: 15.625rem;
-
-      img {
-        width: 100%;
-        height: 15.625rem;
-      }
-    }
-  }
-}
+.detailsGallary
+  width 100%
+  .gallary_header
+    width 100%
+    height 2.6875rem
+    background-color white
+    position fixed
+    .gallary_header_left
+      width 10%
+      height 2.6875rem
+      display inline-flex
+      align-items center
+      justify-content center
+      position absolute
+      z-index 99
+      .icon_class
+        font-size 1.5rem
+    .gallary_header_middle
+      width 100%
+      line-height 2.6875rem
+      text-align center
+      font-size 1rem
+      position absolute
+      top 0rem
+  .gallary_container
+    width 98%
+    padding 3.125rem 1%
+    display inline-flex
+    background-color #f5f5f5
+    flex-wrap wrap
+    div
+      width 48%
+      height 120px
+      margin 0.1875rem
+      img
+        width 100%
+        height 120px
+  .modalDiv
+    width 100%
+    height 41.6875rem
+    background black
+    display inline-flex
+    align-items center
+    position relative
+    flex-wrap wrap
+    .modalDivCenter
+      width 100%
+      height 15.625rem
+      img
+        width 100%
+        height 15.625rem
 </style>
