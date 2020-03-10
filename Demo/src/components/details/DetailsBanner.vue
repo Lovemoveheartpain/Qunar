@@ -54,13 +54,12 @@ export default {
   },
   methods: {
     fan() {
-      this.$router.push("/");
+      this.$router.go(-1);
     },
     toSightImgs() {
       this.$router.push(`/getSightImgs/${this.detailsList.sightName}`);
     },
     headerScroll() {
-      console.log(12)
       let top = document.documentElement.scrollTop || document.body.scrollTop;
       if (top > 1) {
         let opacity = top / 160;
@@ -73,7 +72,6 @@ export default {
     }
   },
   activated() {
-    
     window.addEventListener("scroll", this.headerScroll);
   },
   deactivated() {
